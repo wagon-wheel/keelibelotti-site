@@ -12,6 +12,20 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pathname = Astro.url.pathname;
+
+const navItems = [
+  { label: "Writing", href: "/" },
+  { label: "Photography", href: "/photography/" },
+  { label: "About", href: "/about/" },
+];
+
+const isActive = (href: string) => {
+  if (href === "/") {
+    return pathname === "/" || pathname.startsWith("/blog/");
+  }
+  return pathname.startsWith(href);
+};
 ---
 
 <!doctype html>
@@ -31,7 +45,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <a href="/">Keeli Belotti</a>
       </p>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/" aria-current={Astro.url.pathname === "/" ? "page" : undefined}>Writing</a>
+        {
+          navItems.map((item) => (
+            <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>
+              {item.label}
+            </a>
+          ))
+        }
       </nav>
     </header>
 

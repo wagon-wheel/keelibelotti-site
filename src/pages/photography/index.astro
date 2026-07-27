@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const photos = (await getCollection("photography"))
+  .filter((photo) => !photo.data.draft)
+  .sort((a, b) => {
+    const aDate = a.data.date?.valueOf() ?? 0;
+    const bDate = b.data.date?.valueOf() ?? 0;
+    return bDate - aDate;
+  });
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+  });
+---
+
+<BaseLayout
+  title="Photography — Keeli Belotti"
+  description="Film photography by Keeli Belotti."
+>
+  {
+    photos.length === 0 ? (
+      <p class="empty-state">
+        No photographs yet. Add scans to <code>public/photography/</code> and create
+        entries in <code>src/content/photography/</code>.
+      </p>
+    ) : (
+      <ul class="photo-grid">
+        {photos.map((photo) => (
+          <li class="photo-item">
+            <figure>
+              <img src={photo.data.image} alt={photo.data.title} loading="lazy" />
+              <figcaption>
+                <span class="photo-title">{photo.data.title}</span>
+                {(photo.data.film || photo.data.location || photo.data.date) && (
+                  <span class="photo-meta">
+                    {[
+                      photo.data.film,
+                      photo.data.location,
+                      photo.data.date ? formatDate(photo.data.date) : null,
+                    ]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </span>
+                )}
+                {photo.data.caption && (
+                  <span class="photo-caption">{photo.data.caption}</span>
+                )}
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</BaseLayout>

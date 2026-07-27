@@ -1,0 +1,10 @@
+# Example — copy and rename when you add a scan.
+# Place the image in public/photography/
+
+title: "Untitled"
+image: "/photography/example.jpg"
+caption: "Optional caption."
+film: "Portra 400"
+location: "Brooklyn"
+date: 2026-07-01
+draft: true

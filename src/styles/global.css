@@ -1,12 +1,10 @@
 :root {
-  /* Farrow & Ball — Etruscan Red No. 56 */
-  --color-accent: #805348;
-  --color-accent-muted: rgba(128, 83, 72, 0.12);
-
-  --color-bg: #faf9f7;
-  --color-text: #1c1c1c;
-  --color-text-muted: #5c5c5c;
-  --color-border: rgba(28, 28, 28, 0.1);
+  /* Farrow & Ball — Eating Room Red No. 43 */
+  --color-bg: #8b4d4f;
+  --color-text: #f5f0eb;
+  --color-text-muted: rgba(245, 240, 235, 0.72);
+  --color-border: rgba(245, 240, 235, 0.22);
+  --color-accent-muted: rgba(245, 240, 235, 0.12);
 
   --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -41,7 +39,7 @@ body {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-text);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
   transition: opacity 0.15s ease;
@@ -59,12 +57,13 @@ img {
 .site-header {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: var(--space-lg) var(--space-sm) var(--space-md);
+  padding: var(--space-xl) var(--space-sm) var(--space-lg);
+  text-align: center;
 }
 
 .site-title {
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 1.75rem;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
@@ -75,16 +74,17 @@ img {
 }
 
 .site-title a:hover {
-  color: var(--color-accent);
-  opacity: 1;
+  opacity: 0.75;
 }
 
 .site-nav {
-  margin-top: var(--space-xs);
-  font-family: var(--font-sans);
-  font-size: 0.8125rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35em 0.85em;
+  margin-top: var(--space-sm);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
 }
 
 .site-nav a {
@@ -94,7 +94,7 @@ img {
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-  color: var(--color-accent);
+  color: var(--color-text);
   opacity: 1;
 }
 
@@ -112,6 +112,7 @@ main {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   color: var(--color-text-muted);
+  text-align: center;
 }
 
 .page-intro {
@@ -153,7 +154,7 @@ main {
 }
 
 .post-list a:hover .post-title {
-  color: var(--color-accent);
+  opacity: 0.75;
 }
 
 .post-title {
@@ -229,7 +230,7 @@ main {
 .prose blockquote {
   margin-left: 0;
   padding-left: 1rem;
-  border-left: 2px solid var(--color-accent);
+  border-left: 2px solid rgba(245, 240, 235, 0.5);
   color: var(--color-text-muted);
 }
 
@@ -244,8 +245,8 @@ main {
 .prose pre {
   overflow-x: auto;
   padding: 1rem;
-  background: rgba(28, 28, 28, 0.04);
-  border-left: 2px solid var(--color-accent);
+  background: rgba(0, 0, 0, 0.15);
+  border-left: 2px solid rgba(245, 240, 235, 0.5);
   font-size: 0.875rem;
   line-height: 1.5;
 }
@@ -268,6 +269,49 @@ main {
 .empty-state {
   padding: var(--space-lg) 0;
   color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+.photo-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.photo-item figure {
+  margin: 0;
+}
+
+.photo-item img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--color-border);
+}
+
+.photo-item figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: var(--space-xs);
+}
+
+.photo-title {
+  font-size: 0.9375rem;
+}
+
+.photo-meta,
+.photo-caption {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.photo-caption {
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
   font-style: italic;
 }
 
