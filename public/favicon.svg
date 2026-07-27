@@ -1,13 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <rect width="48" height="48" fill="#f5f0eb" />
-  <rect x="1" y="1" width="46" height="46" stroke="#8b4d4f" stroke-width="1" />
-  <text
-    x="24"
-    y="31"
-    text-anchor="middle"
-    fill="#8b4d4f"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="22"
-    letter-spacing="0.04em"
-  >KB</text>
+  <rect width="48" height="48" fill="#8b4d4f" />
+  <rect x="1.5" y="1.5" width="45" height="45" stroke="#f5f0eb" stroke-width="1" />
+  <path
+    fill="#f5f0eb"
+    d="M11 12h2.2v10.2L21.8 12H25l-8.8 11.2L25.2 36h-3.2l-9.8-12.4V36H11V12zm17.2 0h7.4c4.8 0 7.8 2.4 7.8 6.6 0 2.8-1.4 4.8-3.8 5.8 2.8 1 4.6 3.2 4.6 6.4 0 4.6-3.4 7.2-9.2 7.2h-6.8V12zm2.2 2.2v8.4h4.8c2.8 0 4.4-1.2 4.4-4.2s-1.6-4.2-4.6-4.2h-4.6zm0 10.6v8.8h5.4c3.2 0 5-1.4 5-4.4 0-3-1.8-4.4-5.2-4.4h-5.2z"
+  />
 </svg>
