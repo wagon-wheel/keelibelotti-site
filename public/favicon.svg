@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <rect x="1" y="1" width="46" height="46" stroke="#f5f0eb" stroke-width="1" />
+  <rect width="48" height="48" fill="#f5f0eb" />
+  <rect x="1" y="1" width="46" height="46" stroke="#8b4d4f" stroke-width="1" />
   <text
     x="24"
     y="31"
     text-anchor="middle"
-    fill="#f5f0eb"
+    fill="#8b4d4f"
     font-family="Georgia, 'Times New Roman', serif"
     font-size="22"
     letter-spacing="0.04em"
