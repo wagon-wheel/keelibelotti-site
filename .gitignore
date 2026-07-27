@@ -17,3 +17,7 @@ npm-debug.log*
 
 # IDE
 .astro/
+
+# licensed fonts (generated favicon is committed instead)
+public/fonts/*.ttf
+public/fonts/*.otf

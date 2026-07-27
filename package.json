@@ -5,10 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "generate:favicon": "node scripts/generate-favicon.mjs"
   },
   "dependencies": {
-    "astro": "^5.7.0",
-    "@astrojs/sitemap": "^3.3.0"
+    "@astrojs/sitemap": "^3.3.0",
+    "astro": "^5.7.0"
+  },
+  "devDependencies": {
+    "fontkit": "^2.0.4"
   }
 }
